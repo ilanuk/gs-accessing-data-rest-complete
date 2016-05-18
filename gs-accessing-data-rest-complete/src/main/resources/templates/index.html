@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+
+<title>my employees</title>
+
+<link href="http://getbootstrap.com/dist/css/bootstrap.css"
+	rel="stylesheet">
+</link>
+<link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css"
+	rel="stylesheet">
+</link>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script src="./js/controllers.js"></script>
+</head>
+<body>
+	<div class="jumbotron">
+
+		<section class="container" ng-app="employeeApp">
+			<div ng-controller="employeeCtrl" ng-init="initEmployee()">
+				<div class="row">
+					<table class="table table-hover">
+						<tr>
+							<th>Employee FirstName</th>
+							<th>Employee LastName</th>
+							<th>Employee Salary</th>
+							<th>Action</th>
+						</tr>
+						<tr ng-repeat="employee in employees">
+							<td>{{employee.firstName}}</td>
+							<td>{{employee.lastName}}</td>
+							<td>{{employee.salary}}</td>
+							 <td><a href="#" class="label label-danger glyphicon glyphicon-remove" ng-click="removeEmployee()"> 
+							 		Remove </a>
+              				 </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
